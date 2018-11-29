@@ -23,7 +23,6 @@ class Deck {
   }
 
   /*builds deck with default sort order*/
-
   rebuildDeck() {
     this.deck = [];
     this.discardPile = [];
@@ -40,14 +39,12 @@ class Deck {
   }
 
   /*deal one card of the top*/
-
   deal() {
     let card = this.deck.shift();
     return card;
   }
 
   /*shuffle the intialized deck*/
-
   shuffle() {
     //using Fisher-Yates Shuffle method
     let m = this.deck.length;
@@ -63,7 +60,6 @@ class Deck {
   }
 
   /*discard a specific card and send to discard pile*/
-
   discard(card) {
     let findCard = this.deck.indexOf(card);
     let removedCard = this.deck.splice(findCard, 1);
@@ -79,6 +75,7 @@ class Deck {
     this.deck = cutDeck;
   }
 
+  /*Sorts the left over deck to default order*/
   order() {
     let currentDiscard = this.discardPile;
     let currentDealt = this.dealtCards;
