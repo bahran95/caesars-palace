@@ -5,7 +5,7 @@ Web based Card Dealing API - made with Node + Express.js
 <h3>To Deal a Card</h3>
 <p>make a GET request to <b>'/deal'</b> and you will receive a response with an array of all the cards dealt so far.</p>
 <h3>To Shuffle the Deck</h3>
-<p>make a GET request to <b>'/shuffle'</b> and you will receive a response saying <i>"The deck has been shuffled!"</i></p>
+<p>make a GET request to <b>'/shuffle'</b> and you will receive a response with the shuffled deck.</p>
 <h3>To Discard a Specific Card</h3>
 <p>make a POST request to <b>'/discard'</b> with a JSON containing the card you wish to discard.</p>
 <p><b>Example:</b> <br>
@@ -15,6 +15,7 @@ Web based Card Dealing API - made with Node + Express.js
   }
   <br>
 <p>You will receive a response saying <i>"Ace of Spades has been discarded!"</i></p>
+<p>However, if you weren't dealt that card before you will get a response saying <i>"You have not been dealt that card yet!"</i></p>
 <h3>To Cut the Deck</h3>
 <p>make a POST request to <b>'/cut'</b> with a JSON containing the location of where you want to cut the deck.</p>
 <p><b>Example:</b> <br>
