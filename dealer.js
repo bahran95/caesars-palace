@@ -1,3 +1,5 @@
+/** DOCUMENTATION IN README.MD **/
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -25,6 +27,7 @@ class Deck {
   rebuildDeck() {
     this.deck = [];
     this.discardPile = [];
+    this.dealtCards = [];
 
     const suites = ['Spades', 'Hearts', 'Clubs', 'Diamonds'];
     const values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
@@ -80,7 +83,8 @@ class Deck {
 let newDeck = new Deck();
 
 app.get('/deal', (req, res) => {
-  res.json(newDeck.deal());
+  newDeck.dealtCards.push(newDeck.deal());
+  res.json(newDeck.dealtCards);
 });
 
 app.get('/shuffle', (req, res) => {
@@ -88,8 +92,12 @@ app.get('/shuffle', (req, res) => {
 });
 
 app.post('/discard', (req, res) => {
-  newDeck.discard(req.body.card);
-  res.json(`${req.body.card} has been discarded!`);
+  if (newDeck.dealtCards.indexOf(req.body.card) > -1) {
+    newDeck.discard(req.body.card);
+    res.json(`${req.body.card} has been discarded!`);
+  } else {
+    res.json('You have not been dealt that card yet!');
+  }
 });
 
 app.post('/cut', (req, res) => {
