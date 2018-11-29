@@ -105,7 +105,8 @@ app.get('/deal', (req, res) => {
 });
 
 app.get('/shuffle', (req, res) => {
-  res.json(newDeck.shuffle());
+  newDeck.shuffle();
+  res.json(newDeck.deck);
 });
 
 app.post('/discard', (req, res) => {
