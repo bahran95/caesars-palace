@@ -78,6 +78,23 @@ class Deck {
     let cutDeck = bottomHalf.concat(this.deck);
     this.deck = cutDeck;
   }
+
+  order() {
+    let currentDiscard = this.discardPile;
+    let currentDealt = this.dealtCards;
+
+    this.rebuildDeck();
+
+    let newArr = this.deck.filter(el => {
+      return currentDealt.indexOf(el) < 0;
+    });
+
+    let newArr2 = newArr.filter(el => {
+      return currentDiscard.indexOf(el) < 0;
+    });
+
+    this.deck = newArr2;
+  }
 }
 
 let newDeck = new Deck();
@@ -108,6 +125,11 @@ app.post('/cut', (req, res) => {
 app.get('/rebuildDeck', (req, res) => {
   newDeck.rebuildDeck();
   res.json(newDeck);
+});
+
+app.get('/order', (req, res) => {
+  newDeck.order();
+  res.json(newDeck.deck);
 });
 
 app.listen(3000, () => {
