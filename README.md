@@ -1,5 +1,5 @@
 # caesars-palace
-Web based Card Dealing API - made with Node + Express.js
+Web based Card Dealing API - made with Node + Express.js - <i>by Bahran Abraham</i>
 
 <h1>Card Dealing API Docs</h1>
 <h3>To Deal a Card</h3>
