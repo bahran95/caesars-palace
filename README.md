@@ -3,7 +3,7 @@ Web based Card Dealing API - made with Node + Express.js
 
 <h1>Card Dealing API Docs</h1>
 <h3>To Deal a Card</h3>
-<p>make a GET request to <b>'/deal'</b> and you will receive a response of the card dealt.</p>
+<p>make a GET request to <b>'/deal'</b> and you will receive a response with an array of all the cards dealt so far.</p>
 <h3>To Shuffle the Deck</h3>
 <p>make a GET request to <b>'/shuffle'</b> and you will receive a response saying <i>"The deck has been shuffled!"</i></p>
 <h3>To Discard a Specific Card</h3>
