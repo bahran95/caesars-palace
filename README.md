@@ -2,6 +2,14 @@
 Web based Card Dealing API - made with Node + Express.js - <i>by Bahran Abraham</i>
 
 <h1>Card Dealing API Docs</h1>
+<br>
+<ul>
+  <li>To get started clone the repo to your machine.</li>
+  <li>Run npm init to download the npm packages required</li>
+  <li>In your local machines commandline you can use npm start to start a local server</li>
+  <li>Then you can use an app like postman to make GET and POST request to this API </li>
+</ul>
+<br>
 <h3>To Deal a Card</h3>
 <p>make a GET request to <b>'/deal'</b> and you will receive a response with an array of all the cards dealt so far.</p>
 <h3>To Shuffle the Deck</h3>
